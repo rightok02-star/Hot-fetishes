@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Corruption Protocol</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header / Meter -->
+    <header>
+      <div class="meter-wrap">
+        <div class="meter-label" id="meterLabel">Still clean…</div>
+        <div class="meter-bar">
+          <div class="meter-fill" id="meterFill"></div>
+        </div>
+        <div class="meter-percent" id="meterPercent">0%</div>
+      </div>
+      <div class="status" id="statusLine">No active corruption track</div>
+    </header>
+
+    <!-- Main screens -->
+    <main id="screen">
+      <!-- content injected by JS -->
+    </main>
+
+    <footer>
+      <button id="resetBtn" class="danger-btn">Wipe All Progress (no mercy)</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
