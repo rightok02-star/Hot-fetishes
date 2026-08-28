@@ -233,44 +233,56 @@ footer { text-align: center; padding-top: 20px; }
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid #2a1f22;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  min-height: 120px;
+  padding: 12px;
 }
 
 .image-area img {
   max-width: 100%;
-  max-height: 320px;
-  width: auto;
-  height: auto;
+  max-height: 340px;
   object-fit: contain;
+  border-radius: 8px;
   display: block;
-}
-
-.image-area .loading {
-  color: var(--muted);
-  padding: 40px 20px;
-  font-size: 14px;
+  margin: 0 auto 10px;
 }
 
 .image-controls {
   display: flex;
   gap: 8px;
   justify-content: center;
-  margin-top: 10px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
-.image-controls button {
-  padding: 8px 14px;
+.image-controls button,
+.image-controls input {
+  padding: 8px 12px;
   font-size: 13px;
   background: #2a1f22;
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
 }
 
-/* Settings overlay */
+.image-controls input {
+  flex: 1;
+  min-width: 140px;
+}
+
+.icon-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #2a1f22;
+  border: none;
+  color: var(--text);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -281,7 +293,6 @@ footer { text-align: center; padding-top: 20px; }
   z-index: 100;
   padding: 16px;
 }
-
 .overlay.hidden { display: none; }
 
 .settings-panel {
@@ -295,10 +306,6 @@ footer { text-align: center; padding-top: 20px; }
   border: 1px solid #2a1f22;
 }
 
-.settings-panel h2, .settings-panel h3 {
-  margin-bottom: 16px;
-}
-
 .setting-row {
   display: flex;
   justify-content: space-between;
@@ -307,19 +314,18 @@ footer { text-align: center; padding-top: 20px; }
   font-size: 15px;
 }
 
-.setting-row select, .settings-panel input[type="text"] {
+.setting-row select,
+.settings-panel input[type="text"] {
   background: #2a1f22;
   border: 1px solid #3a2a2e;
   color: var(--text);
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 14px;
-  max-width: 160px;
 }
 
 .settings-panel input[type="text"] {
   width: 100%;
-  max-width: none;
   margin-bottom: 10px;
 }
 
@@ -334,9 +340,3 @@ hr {
   border-top: 1px solid #2a1f22;
   margin: 20px 0;
 }
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-.pulsing { animation: pulse 1.8s infinite; }
