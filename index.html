@@ -27,17 +27,12 @@
     </footer>
   </div>
 
-  <!-- Settings overlay -->
   <div id="settingsOverlay" class="overlay hidden">
     <div class="settings-panel">
       <h2>Settings</h2>
       <label class="setting-row">
-        <span>Show fetish images</span>
+        <span>Show image area</span>
         <input type="checkbox" id="setImages" checked>
-      </label>
-      <label class="setting-row">
-        <span>Auto-cycle images (~12s)</span>
-        <input type="checkbox" id="setAutoCycle" checked>
       </label>
       <label class="setting-row">
         <span>Timer scale</span>
@@ -70,9 +65,17 @@
 
       <hr>
       <h3>Add Custom Fetish</h3>
-      <input type="text" id="customName" placeholder="Full name (e.g. Soft hanging belly)">
-      <input type="text" id="customShort" placeholder="Short name (e.g. hanging belly)">
+      <input type="text" id="customName" placeholder="Full name">
+      <input type="text" id="customShort" placeholder="Short name">
       <input type="text" id="customIronic" placeholder="Ironic instruction">
-      <input type="text" id="customSubs" placeholder="Subreddits (comma-separated, e.g. BigBellies,mytummyrolls)">
+      <input type="text" id="customSearch" placeholder="Search terms (for image button)">
       <button id="addCustomBtn">Add Fetish</button>
-      <p class="hint">Custom fetishes are 
+      <p class="hint">Custom fetishes are saved permanently and can be rolled.</p>
+
+      <button id="closeSettings" class="secondary">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
