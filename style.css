@@ -32,10 +32,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 header {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .meter-wrap {
@@ -50,7 +52,6 @@ header {
   color: var(--accent2);
   margin-bottom: 8px;
   font-weight: 600;
-  letter-spacing: 0.3px;
 }
 
 .meter-bar {
@@ -58,7 +59,6 @@ header {
   background: #2a1a1e;
   border-radius: 9px;
   overflow: hidden;
-  position: relative;
 }
 
 .meter-fill {
@@ -84,9 +84,21 @@ header {
   text-align: center;
 }
 
-main {
-  flex: 1;
+.icon-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #2a1f22;
+  border: none;
+  color: var(--text);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
 }
+
+main { flex: 1; }
 
 .card {
   background: var(--card);
@@ -142,15 +154,11 @@ button {
   transition: transform 0.15s, background 0.15s;
 }
 
-button:active {
-  transform: scale(0.97);
-}
-
+button:active { transform: scale(0.97); }
 button.secondary {
   background: #2a1f22;
   color: var(--text);
 }
-
 button.danger-btn {
   background: transparent;
   color: var(--danger);
@@ -179,11 +187,6 @@ button.danger-btn {
   align-items: center;
   justify-content: center;
   border: 2px solid transparent;
-}
-
-.rating-btn.selected {
-  background: var(--accent);
-  border-color: white;
 }
 
 .fetish-name {
@@ -220,16 +223,120 @@ button.danger-btn {
   margin-top: 12px;
 }
 
-footer {
+footer { text-align: center; padding-top: 20px; }
+
+/* Image area */
+.image-area {
+  margin: 16px 0;
   text-align: center;
-  padding-top: 20px;
+  background: #110d0e;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #2a1f22;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* Filthy pulse animation */
+.image-area img {
+  max-width: 100%;
+  max-height: 320px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.image-area .loading {
+  color: var(--muted);
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.image-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.image-controls button {
+  padding: 8px 14px;
+  font-size: 13px;
+  background: #2a1f22;
+}
+
+/* Settings overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.overlay.hidden { display: none; }
+
+.settings-panel {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px 20px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #2a1f22;
+}
+
+.settings-panel h2, .settings-panel h3 {
+  margin-bottom: 16px;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.setting-row select, .settings-panel input[type="text"] {
+  background: #2a1f22;
+  border: 1px solid #3a2a2e;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 160px;
+}
+
+.settings-panel input[type="text"] {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 10px;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0 16px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #2a1f22;
+  margin: 20px 0;
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
 }
-.pulsing {
-  animation: pulse 1.8s infinite;
-}
+.pulsing { animation: pulse 1.8s infinite; }
