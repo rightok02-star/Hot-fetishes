@@ -8,7 +8,6 @@
 </head>
 <body>
   <div id="app">
-    <!-- Header / Meter -->
     <header>
       <div class="meter-wrap">
         <div class="meter-label" id="meterLabel">Still clean…</div>
@@ -18,18 +17,62 @@
         <div class="meter-percent" id="meterPercent">0%</div>
       </div>
       <div class="status" id="statusLine">No active corruption track</div>
+      <button id="settingsBtn" class="icon-btn" title="Settings">⚙</button>
     </header>
 
-    <!-- Main screens -->
-    <main id="screen">
-      <!-- content injected by JS -->
-    </main>
+    <main id="screen"></main>
 
     <footer>
       <button id="resetBtn" class="danger-btn">Wipe All Progress (no mercy)</button>
     </footer>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Settings overlay -->
+  <div id="settingsOverlay" class="overlay hidden">
+    <div class="settings-panel">
+      <h2>Settings</h2>
+      <label class="setting-row">
+        <span>Show fetish images</span>
+        <input type="checkbox" id="setImages" checked>
+      </label>
+      <label class="setting-row">
+        <span>Auto-cycle images (~12s)</span>
+        <input type="checkbox" id="setAutoCycle" checked>
+      </label>
+      <label class="setting-row">
+        <span>Timer scale</span>
+        <select id="setTimerScale">
+          <option value="0.5">0.5× (faster)</option>
+          <option value="0.75">0.75×</option>
+          <option value="1" selected>1× (default)</option>
+          <option value="1.25">1.25×</option>
+          <option value="1.5">1.5×</option>
+          <option value="2">2× (slower)</option>
+        </select>
+      </label>
+      <label class="setting-row">
+        <span>Brutal strength</span>
+        <select id="setBrutal">
+          <option value="0.5">Mild</option>
+          <option value="1" selected>Normal</option>
+          <option value="1.5">Harsh</option>
+          <option value="2">Merciless</option>
+        </select>
+      </label>
+      <label class="setting-row">
+        <span>Corruption gain</span>
+        <select id="setGain">
+          <option value="0.7">Slow</option>
+          <option value="1" selected>Normal</option>
+          <option value="1.4">Fast</option>
+        </select>
+      </label>
+
+      <hr>
+      <h3>Add Custom Fetish</h3>
+      <input type="text" id="customName" placeholder="Full name (e.g. Soft hanging belly)">
+      <input type="text" id="customShort" placeholder="Short name (e.g. hanging belly)">
+      <input type="text" id="customIronic" placeholder="Ironic instruction">
+      <input type="text" id="customSubs" placeholder="Subreddits (comma-separated, e.g. BigBellies,mytummyrolls)">
+      <button id="addCustomBtn">Add Fetish</button>
+      <p class="hint">Custom fetishes are 
